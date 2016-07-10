@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML - CSS - JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="js/lib/selector/plugins/datatable/datatable.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="topnav">
+            <li><a>Launch</a></li>
+            <li><a class="active">Home</a></li>
+            <li><a>About</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="dropDown()">&#9776;</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="contain">
+        <h1 style="text-align: center">DataTable Plugin</h1>
+        <div class="pull-right" id="searchBox">
+            <input class="form-control" type="search" name="" value="" placeholder="Search for...">
+        </div>
+
+        <table class="datatable" id="tableEmployee">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Sex</th>
+                    <th>Marital Status</th>
+                    <th>DOB</th>
+                    <th>Title</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="js/lib/selector/selector-util.js" type="application/javascript"></script>
+    <script src="js/lib/selector/selector.js" type="application/javascript"></script>
+    <script src="js/lib/selector/plugins/datatable/selector-dataTable.js" type="application/javascript"></script>
+    <script src="js/main.js" type="application/javascript"></script>
+</body>
+</html>
+</html>
