@@ -1,13 +1,18 @@
 (function ($) {
-   var data = [
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"],
-        ["1000", "Jole Osteen", "M", "M", "1988", "Software Engineer", "joleosteen@kms-technology", "(+84) 096-1863i459"]
+     var data = [
+        {
+            id: 10000,
+            name: "Jole Osteen",
+            sex: "M",
+            maritalStatus: "M",
+            dob:"01-01-1987",
+            title:"Senior Software Engineer",
+            address:"1355 Market Street, Suite 900 San Francisco, CA 94103",
+            phoneNumber:"(123) 456-7890",
+            email: "jole.osteen@example.com"
+        }
     ];
+   
     $('.datatable').dataTable({
         data: data,
         columnDefs:[
