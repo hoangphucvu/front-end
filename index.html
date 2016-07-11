@@ -22,23 +22,11 @@
     <section id="contain">
         <h1 style="text-align: center">DataTable Plugin</h1>
         <div class="pull-right" id="searchBox">
-            <input class="form-control" type="search" name="" value="" placeholder="Search for...">
+           <input type="search"  placeholder="Search for..." data-table="orderTable" class="form-control searchFilter">
         </div>
 
-        <table class="datatable" id="tableEmployee">
+        <table class="datatable orderTable" id="tableEmployee">
             <thead>
-                <!-- <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Sex</th>
-                    <th>Marital Status</th>
-                    <th>DOB</th>
-                    <th>Title</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th></th>
-                </tr> -->
             </thead>
             <tbody>
             </tbody>
@@ -49,6 +37,7 @@
     <script src="js/lib/selector/selector.js" type="application/javascript"></script>
     <script src="js/lib/selector/plugins/datatable/selector-dataTable.js" type="application/javascript"></script>
     <script src="js/main.js" type="application/javascript"></script>
+    <script src="js/search.js" type="application/javascript"></script>
 </body>
 </html>
 </html>

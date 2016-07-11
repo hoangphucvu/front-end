@@ -40,13 +40,7 @@ ul.topnav li a:hover{
 ul.topnav li.icon{
 	display: none;
 }
-.table{
-	width: 100%;
-    max-width: 100%;
-} 
-.table-bordered {
-    border: 1px solid #ddd;
-}
+
 .active{
 	background-color: #080808;
 }
@@ -80,38 +74,8 @@ ul.topnav li.icon{
 #tableEmployee tbody tr:nth-child(odd) {
   background: #eee;
 }
-@media only screen and (min-width: 320px) and (max-width: 479px){
-	#contain{
-		margin-top: 5%;
-	}
-	ul.topnav li:not(:first-child) {
-		display: none;
-	}
-	ul.topnav li.icon {
-		float:right;
-		display: inline-block;
-	}
-	ul.topnav.responsive {
-		position: relative;
-	}
-	ul.topnav.responsive li.icon {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-	ul.topnav.responsive li {
-		float: none;
-		display: inline;
-	}
-	ul.topnav.responsive li a {
-		display: block;
-		text-align: left;
-	}
-}
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
-}
-@media only screen and (min-width: 480px) and (max-width: 767px){
+
+@media only screen and (max-width: 768px){
 	#contain{
 		margin-top: 15%;
 	}
@@ -137,6 +101,9 @@ ul.topnav li.icon{
 	ul.topnav.responsive li a {
 		display: block;
 		text-align: left;
+	}
+	.xs-hidden{
+		display: none;
 	}
 }
 
