@@ -17,6 +17,7 @@
         data = datatable._dt_setting.data || [],
         thead = datatable._dt_thead,
         tbody = datatable._dt_tbody,
+        pageSize = datatable._dt_setting.pageSize,
         columnDefs = datatable._dt_setting.columnDefs;
         thead.empty();
         tbody.empty();
@@ -45,19 +46,56 @@
 
         data.forEach(function(values) {
             var tr = document.createElement('tr'),
-            td,
-            dataReturn = values;
+            td;
             values.forEach(function(value) {
                 td = document.createElement('td');
                 td.className = "md-hidden sm-hidden xs-hidden";
                 td.innerHTML = value;
                 tr.appendChild(td);
-                datatable._dt_setting.columnRenderedCallback.call(datatable, tr, td, dataReturn);
+                datatable._dt_setting.columnRenderedCallback.call(datatable, tr, td, values);
             });
             tbody.append(tr);
             datatable._dt_setting.rowRenderedCallback.call(datatable, tr, values);
         });
+
+        this.generatePagination(pageSize,data);   
     };
+
+    API.prototype.generatePagination = function(pageSize, data) {
+        var numberOfPage,
+        hrefLink;
+        numberOfPage = Math.ceil(data.length / pageSize);
+
+        var previous = document.createElement('li');
+        hrefLink = document.createElement('a');
+        hrefLink.href = '#';
+        hrefLink.innerHTML = '&laquo;';
+        previous.appendChild(hrefLink);
+        $('.pagination').append(previous);
+
+        for (var i = 0; i < numberOfPage; i++) {
+            var pageNum = i + 1 ;
+            var pageLink = document.createElement('li');
+            hrefLink = document.createElement('a');
+            hrefLink.href = '#';
+            hrefLink.innerHTML = pageNum;
+            hrefLink.addEventListener('click', function() {
+                
+            });
+            pageLink.appendChild(hrefLink);
+            $('.pagination').append(pageLink);
+        }
+            var next = document.createElement('li');
+            hrefLink = document.createElement('a');
+            hrefLink.href = '#';
+            hrefLink.innerHTML = '&raquo;';
+            next.appendChild(hrefLink);
+            $('.pagination').append(next);
+        }
+
+    API.prototype.generateBody = function(data, pageSize, innerHTML){
+       
+    }
 
     function DataTable(cfgs) {
         this._dt_setting = _.extend(DEFAULT_CONFIG, cfgs);

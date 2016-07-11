@@ -50,10 +50,10 @@ $('.datatable').dataTable({
     searchable: true,
     pageSize: 2,
     columnRenderedCallback: function(tr, td, data) {
-        if(data[2] == 'M'){
+        if(data[2] == 'M') {
             data[2] = 'Male';
-        }
-        if(data[3] == 'M'){
+        } 
+        if(data[3] == 'M') {
             data[3] = 'Married';
         }
         td.className = "md-hidden sm-hidden xs-hidden"; 
