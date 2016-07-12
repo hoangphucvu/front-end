@@ -15,17 +15,17 @@
             <li><a class="active">Home</a></li>
             <li><a>About</a></li>
             <li class="icon">
-                <a href="javascript:void(0);" onclick="dropDown()">&#9776;</a>
+                <a href="#" id="icon-href">&#9776;</a>
             </li>
         </ul>
     </nav>
-    <section id="contain">
+    <section class="contain">
         <h1 style="text-align: center">DataTable Plugin</h1>
-        <div class="pull-right" id="searchBox">
-           <input type="search"  placeholder="Search for..." data-table="orderTable" class="form-control searchFilter">
+        <div class="pull-right" id="search-box">
+           <input class="form-control searchFilter" type="search"  placeholder="Search for..." data-table="orderTable" >
         </div>
 
-        <table class="datatable orderTable" id="tableEmployee">
+        <table class="datatable orderTable table-employee">
             <thead>
             </thead>
             <tbody>
@@ -38,8 +38,9 @@
     <script src="js/lib/selector/selector-util.js" type="application/javascript"></script>
     <script src="js/lib/selector/selector.js" type="application/javascript"></script>
     <script src="js/lib/selector/plugins/datatable/selector-dataTable.js" type="application/javascript"></script>
-    <script src="js/main.js" type="application/javascript"></script>
+    <script src="js/nav.js" type="application/javascript"></script>
     <script src="js/search.js" type="application/javascript"></script>
+    <script src="js/main.js" type="application/javascript"></script>
 </body>
 </html>
 </html>

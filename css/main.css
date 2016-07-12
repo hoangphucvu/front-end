@@ -5,10 +5,11 @@ body {
 .red {
 	color: darkred;
 }
-#contain {
+.contain {
 	margin-top: 5%;
 	padding: 2%;
 }
+
 ul.topnav {
 	list-style-type:none;
 	overflow: hidden; 
@@ -21,9 +22,11 @@ ul.topnav {
 	padding: 0;
 	letter-spacing: 2px;
 }
-ul.topnav li{
+
+ul.topnav li {
 	float: left;
 }
+
 ul.topnav li a {
 	display: block;
 	color: #f2f2f2;
@@ -34,9 +37,11 @@ ul.topnav li a {
 	font-size: 20px;
 
 }
+
 ul.topnav li a:hover {
 	background-color: #cccccc;
 }
+
 ul.topnav li.icon {
 	display: none;
 }
@@ -44,93 +49,120 @@ ul.topnav li.icon {
 .active {
 	background-color: #080808;
 }
+
 .form-control {
 	display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
-#searchBox {
+
+#search-box {
 	margin-bottom: 5px;
 }
-#tableEmployee {
+
+.table-employee {
 	border-collapse: collapse;
 	border:2px solid #dddddd;
 	width: 100%;
 	margin: auto;
 }
-#tableEmployee th, td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #dddddd;
-}
-#tableEmployee tbody tr:nth-child(odd) {
-  background: #eee;
-}
-ul.pagination {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    margin-top: 5px;
-    float: right;
+
+.table-employee th, td {
+	padding: 0.25rem;
+	text-align: left;
+	border: 1px solid #dddddd;
 }
 
-ul.pagination li {display: inline;}
+.table-employee tbody tr:nth-child(odd) {
+	background: #eee;
+}
+
+ul.pagination {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	margin-top: 5px;
+	float: right;
+}
+
+ul.pagination li {
+	display: inline;
+}
 
 ul.pagination li a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
 }
 
 ul.pagination li a.active {
-    background-color: #337ab7;
-    color: white;
+	background-color: #337ab7;
+	color: white;
 }
 
-ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+ul.pagination li a:hover:not(.active) {
+	background-color: #ddd;
+}
+
 @media only screen and (max-width: 768px) {
-	#contain {
+
+	.contain {
 		margin-top: 15%;
 	}
+
 	ul.topnav li:not(:first-child) {
 		display: none;
 	}
+
 	ul.topnav li.icon {
 		float:right;
 		display: inline-block;
 	}
+
 	ul.topnav.responsive {
 		position: relative;
 	}
+
 	ul.topnav.responsive li.icon {
 		position: absolute;
 		right: 0;
 		top: 0;
 	}
+
 	ul.topnav.responsive li {
 		float: none;
 		display: inline;
 	}
+
 	ul.topnav.responsive li a {
 		display: block;
 		text-align: left;
 	}
-	.xs-hidden{
+
+	.xs-hidden {
 		display: none;
 	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
+
+	.sm-hidden {
+		display: none;
+	}
+
+	.md-hidden {
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1999px){

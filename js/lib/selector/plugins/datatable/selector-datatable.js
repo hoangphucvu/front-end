@@ -12,97 +12,150 @@
         this.datatable = datatable;
     }
 
-    API.prototype.draw = function() {
-        var datatable = this.datatable,
-        data = datatable._dt_setting.data || [],
-        thead = datatable._dt_thead,
-        tbody = datatable._dt_tbody,
-        pageSize = datatable._dt_setting.pageSize,
-        columnDefs = datatable._dt_setting.columnDefs;
+    API.prototype.drawTable = function(){
+        var datatable = this.datatable;
+        var data = datatable._dt_setting.data || [];
+        const pageSize = datatable._dt_setting.pageSize;
+        var api = this;
+
+        api.drawHeader();
+        api.drawBody(1);
+        api.generatePagination(pageSize,data);
+    }
+
+
+    API.prototype.drawHeader = function() {
+        var datatable = this.datatable;
+        var thead = datatable._dt_thead;
+        var columnDefs = datatable._dt_setting.columnDefs;
+
         thead.empty();
-        tbody.empty();
         columnDefs.forEach(function(values){
             var th = document.createElement('th');
-            if (values.name == 'sex' || values.name == 'maritalStatus' 
-                ||  values.name == 'dob' || values.name == 'address' 
-                || values.name == 'email')
-            {
-                th.className = "md-hidden sm-hidden xs-hidden";
-            }
-            
             th.innerHTML = values.name;
+
+            if (values.classNames) {
+                th.className = values.classNames;
+            }
+
             thead.append(th);
         });
+    }
 
-        //check if data is an array or an object
-        //if object then map to array
-        if (!Array.isArray(data[0])) {
-            data = data.map(function(obj) { 
-                return [obj.id, obj.name, 
-                obj.sex, obj.maritalStatus,
-                obj.dob, obj.title, 
-                obj.address, obj.phoneNumber, obj.email] });
+    API.prototype.drawBody = function(indexPage) {
+        var api = this;
+        var datatable = this.datatable;
+        var data = datatable._dt_setting.data || [];
+        var tbody = datatable._dt_tbody;
+        const pageSize = datatable._dt_setting.pageSize;
+        var columnDefs = datatable._dt_setting.columnDefs;
+        tbody.empty();
+        
+        var pageStart = pageSize * (indexPage -1);
+        var lastPage = pageStart + pageSize;
+        if (lastPage > data.length) {
+            lastPage = data.length;
         }
 
-        data.forEach(function(values) {
-            var tr = document.createElement('tr'),
-            td;
-            values.forEach(function(value) {
-                td = document.createElement('td');
-                td.className = "md-hidden sm-hidden xs-hidden";
-                td.innerHTML = value;
-                tr.appendChild(td);
-                datatable._dt_setting.columnRenderedCallback.call(datatable, tr, td, values);
-            });
-            tbody.append(tr);
-            datatable._dt_setting.rowRenderedCallback.call(datatable, tr, values);
-        });
+        var pageData = data.slice(pageStart, lastPage);
+        pageData.forEach(function(values) {
+            var tr = document.createElement('tr');
+            var td;
+            //data is an array
+            if(columnDefs.length == 0) {
+                values.forEach(function(value) {
+                    td = document.createElement('td');
+                    td.innerHTML = value;
+                    tr.appendChild(td);
+                    datatable._dt_setting.columnRenderedCallback.call(
+                        datatable, columnDefs, tr, td, values);
+                });
+            }
+            //data is an object
+            else {
+                columnDefs.forEach(function(value) {
+                    td = document.createElement('td');
+                    var columName = value.name;
+                    var columData = values[columName];
+                    td.innerHTML = columData;
+                    datatable._dt_setting.columnRenderedCallback.call(
+                        datatable, columName, tr, td, columData);
+                    tr.appendChild(td);
+                });
+            }
 
-        this.generatePagination(pageSize,data);   
+            api.drawDeleteButton(tr, values);
+            tbody.append(tr);
+            datatable._dt_setting.rowRenderedCallback.call(columnDefs, tr, values);          
+        });  
     };
 
     API.prototype.generatePagination = function(pageSize, data) {
-        var numberOfPage,
-        hrefLink;
-        numberOfPage = Math.ceil(data.length / pageSize);
+        var numberOfPage;
+        var numberOfPage = Math.ceil(data.length / pageSize);
+        var li;
+        var a;
+        var api = this;
+        var datatable = this.datatable;
+        datatable._dt_ul.empty();
 
-        var previous = document.createElement('li');
-        hrefLink = document.createElement('a');
-        hrefLink.href = '#';
-        hrefLink.innerHTML = '&laquo;';
-        previous.appendChild(hrefLink);
-        $('.pagination').append(previous);
+        li = document.createElement('li');
+        a = document.createElement('a');
+        a.href = '#';
+        a.innerHTML = '&laquo;';
+        li.appendChild(a);
+        $('.pagination').append(li);
 
-        for (var i = 0; i < numberOfPage; i++) {
-            var pageNum = i + 1 ;
-            var pageLink = document.createElement('li');
-            hrefLink = document.createElement('a');
-            hrefLink.href = '#';
-            hrefLink.innerHTML = pageNum;
-            hrefLink.addEventListener('click', function() {
-                
+        for (var i = 1; i <= numberOfPage; i++) {
+            li = document.createElement('li');
+            li.setAttribute('value',i);
+            a = document.createElement('a');
+            a.href = '#';
+            a.innerHTML = i;
+            li.addEventListener('click', function() {
+                api.drawBody(this.getAttribute('value'));
             });
-            pageLink.appendChild(hrefLink);
-            $('.pagination').append(pageLink);
-        }
-            var next = document.createElement('li');
-            hrefLink = document.createElement('a');
-            hrefLink.href = '#';
-            hrefLink.innerHTML = '&raquo;';
-            next.appendChild(hrefLink);
-            $('.pagination').append(next);
+            li.appendChild(a);
+            $('.pagination').append(li);
         }
 
-    API.prototype.generateBody = function(data, pageSize, innerHTML){
-       
+        li = document.createElement('li');
+        a = document.createElement('a');
+        a.href = '#';
+        a.innerHTML = '&raquo;';
+        li.appendChild(a);
+        $('.pagination').append(li);
+    }
+
+
+    API.prototype.drawDeleteButton = function (tr, key){
+        var api = this;
+        var datatable = this.datatable;
+        var delBtn = document.createElement('i');
+        var td = document.createElement('td');
+        var data = datatable._dt_setting.data || [];
+        const pageSize = datatable._dt_setting.pageSize;
+
+        delBtn.className = 'fa fa-trash red';
+        delBtn.addEventListener("click", function() {
+            confirm("Are you sure you want to delete " + key['id']);
+            var row = this.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            data.splice(data.indexOf(key), 1);
+            api.generatePagination(pageSize, data);
+        });
+        
+        td.appendChild(delBtn);
+        tr.appendChild(td);
     }
 
     function DataTable(cfgs) {
         this._dt_setting = _.extend(DEFAULT_CONFIG, cfgs);
         this._dt_tbody = this.find('tbody');
         this._dt_thead = this.find('thead');
+        this._dt_ul = $('.pagination');
         var api = new API(this);
-        api.draw();
+        api.drawTable();
         return api;
     }
 
