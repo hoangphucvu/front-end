@@ -28,8 +28,8 @@
         var datatable = this.datatable;
         var thead = datatable._dt_thead;
         var columnDefs = datatable._dt_setting.columnDefs;
-
         thead.empty();
+        
         columnDefs.forEach(function(values){
             var th = document.createElement('th');
             th.innerHTML = values.name;
@@ -38,6 +38,7 @@
                 th.className = values.classNames;
             }
 
+            thead.append(th);
             thead.append(th);
         });
     }
@@ -49,6 +50,7 @@
         var tbody = datatable._dt_tbody;
         const pageSize = datatable._dt_setting.pageSize;
         var columnDefs = datatable._dt_setting.columnDefs;
+        var thLast = datatable._dt_th;
         tbody.empty();
         
         var pageStart = pageSize * (indexPage -1);
@@ -67,8 +69,8 @@
                     td = document.createElement('td');
                     td.innerHTML = value;
                     tr.appendChild(td);
-                    datatable._dt_setting.columnRenderedCallback.call(
-                        datatable, columnDefs, tr, td, values);
+                    datatable._dt_setting.columnRenderedCallback.call
+                    (datatable, columnDefs, tr, td, values);
                 });
             }
             //data is an object
@@ -78,20 +80,19 @@
                     var columName = value.name;
                     var columData = values[columName];
                     td.innerHTML = columData;
-                    datatable._dt_setting.columnRenderedCallback.call(
-                        datatable, columName, tr, td, columData);
+                    var className = value.classNames;
+                    datatable._dt_setting.columnRenderedCallback.call
+                    (datatable, className, columName, tr, td, columData);
                     tr.appendChild(td);
                 });
             }
 
             api.drawDeleteButton(tr, values);
             tbody.append(tr);
-            datatable._dt_setting.rowRenderedCallback.call(columnDefs, tr, values);          
-        });  
+        });
     };
 
     API.prototype.generatePagination = function(pageSize, data) {
-        var numberOfPage;
         var numberOfPage = Math.ceil(data.length / pageSize);
         var li;
         var a;
@@ -136,19 +137,22 @@
         var data = datatable._dt_setting.data || [];
         const pageSize = datatable._dt_setting.pageSize;
 
-        delBtn.className = 'fa fa-trash red';
+        delBtn.className = 'btn fa fa-trash red';
         delBtn.addEventListener("click", function() {
-            confirm("Are you sure you want to delete " + key['id']);
-            var row = this.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-            data.splice(data.indexOf(key), 1);
-            api.generatePagination(pageSize, data);
+            var confirmMessage = confirm("Are you sure you want to delete " + key['name']);
+            if (confirmMessage) {
+                var row = this.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+                data.splice(data.indexOf(key), 1);
+                api.drawBody(1);
+                api.generatePagination(pageSize, data);
+            }
         });
         
         td.appendChild(delBtn);
         tr.appendChild(td);
     }
-
+    
     function DataTable(cfgs) {
         this._dt_setting = _.extend(DEFAULT_CONFIG, cfgs);
         this._dt_tbody = this.find('tbody');

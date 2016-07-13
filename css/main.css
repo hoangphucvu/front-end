@@ -2,6 +2,11 @@ body {
 	padding: 0;
 	margin: 0;
 }
+
+td:first-child {
+	color: #6b92b1;
+}
+
 .red {
 	color: darkred;
 }
@@ -52,7 +57,7 @@ ul.topnav li.icon {
 
 .form-control {
 	display: block;
-	width: 100%;
+	width: 150px;
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -66,6 +71,7 @@ ul.topnav li.icon {
 
 #search-box {
 	margin-bottom: 5px;
+	float: right !important;
 }
 
 .table-employee {

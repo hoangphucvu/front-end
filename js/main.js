@@ -12,7 +12,7 @@
     },
     {
         id: 2,
-        name: "Jole Osteen",
+        name: "Jake",
         sex: "M",
         maritalStatus: "M",
         dob: "01-01-1987",
@@ -23,7 +23,7 @@
     },
     {
         id: 3,
-        name: "Phuc",
+        name: "David",
         sex: "M",
         maritalStatus: "M",
         dob: "01-01-1987",
@@ -48,7 +48,7 @@ $('.datatable').dataTable({
     ],
     searchable: true,
     pageSize: 2,
-    columnRenderedCallback: function(columName, tr, td, columData) {
+    columnRenderedCallback: function(className, columName, tr, td, columData) {
         if(columName === 'sex') {
             if (columData === 'M') {
                 td.innerHTML = 'Male';
@@ -57,6 +57,7 @@ $('.datatable').dataTable({
                 td.innerHTML = 'FeMale';
             }
         } 
+
         if(columName === 'maritalStatus') {
             if (columData === 'M') {
                 td.innerHTML = 'Married';
@@ -65,8 +66,11 @@ $('.datatable').dataTable({
                 td.innerHTML = 'Not Married';
             }
         }
-        //td.className = "md-hidden sm-hidden xs-hidden"; 
-    },
+
+        if(className){
+            td.className = className;
+        }
+    }
     });
 })(Selector);
 
