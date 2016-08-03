@@ -31,6 +31,17 @@
         address: "1355 Market Street, Suite 900 San Francisco, CA 94103",
         phoneNumber: "(123) 456-7890",
         email: "jole.osteen@example.com"
+    },
+    {
+        id: 4,
+        name: "David",
+        sex: "M",
+        maritalStatus: "M",
+        dob: "01-01-1987",
+        title: "Senior Software Engineer",
+        address: "1355 Market Street, Suite 900 San Francisco, CA 94103",
+        phoneNumber: "(123) 456-7890",
+        email: "jole.osteen@example.com"
     }];
 
 $('.datatable').dataTable({
