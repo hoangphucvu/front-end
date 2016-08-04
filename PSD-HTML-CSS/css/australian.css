@@ -1,0 +1,226 @@
+html,body {
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	background: url("../australian/header_background.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#dash {
+	width:900px;
+}
+.clear-fix {clear: both;}
+
+#info-header {
+	font-family: "Myriad Pro";
+	font-size: 15.5px;
+	color:#009bdf;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#currency {margin-left: 2%;}
+
+#flag {margin-right: 1%;}
+
+#search_item input {
+	background: white url("../australian/search-icon.jpg") right no-repeat;
+	padding-right: 30px;
+	cursor: pointer;
+}
+
+.container {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.navigation {
+	background: #4f5050;
+	height: 40px;
+	margin-top: -5px;
+}
+
+.navigation ul {
+	list-style: none;
+	padding: 0;
+}
+
+.navigation ul li {
+	display: inline-block;
+	color: white;
+	border-right: 1px solid black;
+	line-height: 40px;
+	text-align: center;
+	padding: 0 16px;
+	padding-top: 4px;
+	transition: 0.3s;
+}
+
+.navigation ul li.icon {display: none;}
+
+.navigation ul li img {
+	padding-top: 5px;
+}
+
+.inline_div {
+	display: inline-block;
+}
+
+#slider_child {
+	background: url('../australian/background_slider.png');
+	padding: 5px;
+}
+
+#bx-pager img {width: 240px;}
+
+#social {
+	right:0;
+	position: fixed;
+	top: 212px;
+}
+
+#social a {
+	display: block;
+	position: relative;
+}
+
+#main_content_product {background-color: #f2f2f2; }
+
+.container_product {overflow: hidden;}
+
+.container_product {
+	border-left: 1px solid #e8e7e8;
+	border-right: 1px solid #e8e7e8;
+	background-color: white;
+}
+
+.container_product span {
+	color:#009bdf;
+	font-size: 30px;
+}
+
+.container_product p {
+	font-family: "Myriad Pro";
+	font-size: 15px;
+}
+
+.container_product_item {
+	width: 50%;
+	float: left; 
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+.item_top {
+	width: 300px;
+	float: left;
+	margin-left: 2%;
+	margin-bottom: 2%;
+}
+
+.item_top div {
+	width: 300px;
+	color: white;
+	background-color: #00b5c9;
+	margin-top: -5px;
+	text-align: left;
+}
+.item_top div span {padding: 5px;}
+
+.item_top_img {
+	width: 300px;
+	height: 250px;
+}
+
+.item_top_btn_buy {
+	width: 100px;
+	float: right;
+}
+
+#top_sell_items {background-color: white;}
+
+#top_sell_items span{
+	color:#009bdf;
+	font-size: 30px;
+	margin-left: 2%;
+	margin-top: 2%;
+}
+
+footer {
+	background-color: #4f4f4f;
+	display: table;
+	width: 100%;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #dbdbdb;
+}
+
+#footer ul li {list-style: none;}
+
+.footer-links {
+	width: 25%;
+	float: left;
+}
+
+
+
+@media only screen and (max-width: 480px){
+	#logo {width: 8%;}
+
+	#info-header {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	#logo {width: 8%;}
+
+	.navigation ul li:not(:first-child) {display: none;}
+
+	.navigation ul li.icon {
+		float: right;
+		display: inline-block;
+	}
+	
+	.navigation ul.responsive{position: relative;}
+
+	.navigation ul.responsive li.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	
+	.navigation ul.responsive li {
+		float: none;
+		display: inline;
+	}
+
+	.navigation ul.responsive li a{
+		display: block;
+		text-align: left;
+	}
+	
+	#info-header {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 768px){
+	#search_item,#cart_sumary {
+		float: right;
+		margin-top: 10px;
+	}
+	#cart_sumary {
+		color:white;
+		margin-top: -1px;
+	}
+	#cart_sumary img {
+		margin-top: 7px;
+	}
+}
