@@ -13,15 +13,6 @@
 
 /** RESET AND LAYOUT
 ===================================*/
-@media only screen and (max-width: 999px){
-	.bx-wrapper {
-		position: relative;
-		margin: -15px auto 60px;
-		padding: 10px;
-		*zoom: 1;
-		z-index: -1;
-	}
-}
 
 .bx-wrapper {
 	position: relative;
@@ -44,8 +35,6 @@
 	-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
 	box-shadow: 0 0 5px #ccc;
-	border:  5px solid #fff;
-	left: -5px;
 	background: #fff;
 	
 	/*fix other elements on the page moving (on Chrome)*/
