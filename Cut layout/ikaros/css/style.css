@@ -1,10 +1,18 @@
+@media (min-width: 1224px) { .col-4 { width: 400px; float: left; } }
+
+@media (min-width: 1224px) { .col-8 { width: 560px; float: left; padding-left: 30px; } }
+
 @media (min-width: 1224px) { #header { width: 100px; } }
 
 @media (min-width: 1224px) { #body { margin-top: 145px; } }
 
+@media (min-width: 1224px) { .nav.nav-tabs { padding-left: 300px; } }
+
 .navbar-nav { float: right; }
-.navbar-nav a { height: 92px; font-family: 'Myriad Pro'; font-size: 12px; color: #d4d4d4; border-left: 1px solid #292c2d; border-right: 1px solid #292c2d; }
+.navbar-nav a { height: 92px; font-family: "Myriad Pro"; font-size: 12px; color: #d4d4d4; border-left: 1px solid #292c2d; border-right: 1px solid #292c2d; }
 .navbar-nav li a { padding-top: 50px; }
+
+.nav-tabs > li > a { margin-right: 0 !important; line-height: 1.42857143; border-radius: 4px 4px 0 0; border: 1px solid #ddd !important; }
 
 #navbar li a:hover { background-color: #35373a; color: #86acc4; }
 
@@ -14,8 +22,33 @@
 
 @media (min-width: 1224px) { .navbar { background: #3a3d40; height: 94px; } }
 
-@media (min-width: 1224px) { #service { margin-top: 54px; text-align: center; font-family: 'Myriad Pro'; }
-  #service span { font-size: 30px; }
-  #service p { font-size: 20px; } }
+@media (min-width: 1224px) { #service { margin-top: 54px; text-align: center; font-family: "Myriad Pro"; }
+  #service span { font-size: 30px; font-family: "Myriad Pro"; }
+  #service p { font-size: 20px; font-family: "Myriad Pro"; } }
+
+#service_info { text-align: left; font-family: "Myriad Pro"; }
+#service_info span { font-size: 17px; }
+#service_info p { font-size: 13px; }
+
+#webDesignTab, #photoTab, #graphicsTab { height: 384px; }
+@media (min-width: 1224px) { #webDesignTab, #photoTab, #graphicsTab { margin-top: 32px; } }
+@media (min-width: 1224px) { #webDesignTab p, #photoTab p, #graphicsTab p { margin-top: 20px; } }
+
+@media (min-width: 1224px) { .dash { clear: both; border: 2px dotted #b1b1b1; } }
+
+@media (min-width: 1224px) { #project { height: 640px; margin: 50px 0; text-align: center; }
+  #project span { font-size: 30px; font-family: "Myriad Pro"; }
+  #project p { font-size: 20px; font-family: "Myriad Pro"; }
+  #project img { width: 312px; height: 250px; }
+  #project .galery4 { margin-top: 14px; width: 320px; float: left; } }
+
+@media (min-width: 1224px) { #blog { margin: 50px 0; text-align: center; }
+  #blog span { font-size: 30px; font-family: "Myriad Pro"; }
+  #blog p { font-size: 20px; font-family: "Myriad Pro"; } }
+
+@media (min-width: 1224px) { #customer { margin: 50px 0; text-align: center; }
+  #customer span { font-size: 30px; font-family: "Myriad Pro"; }
+  #customer p { font-size: 20px; font-family: "Myriad Pro"; }
+  #customer .customer-list { width: 160px; float: left; } }
 
 /*# sourceMappingURL=style.css.map */

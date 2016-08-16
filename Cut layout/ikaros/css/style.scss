@@ -3,7 +3,20 @@ $desktop-width:1024px;
 $tablet-width:768px;
 $smallTablet-width:480px;
 $mobile-width:320px;
-
+$font:'Myriad Pro';
+@mixin margin() {
+	margin:50px 0;
+}
+@mixin span-p() {
+	span {
+		font-size:30px;
+		font-family:$font;
+	}
+	p {
+		font-size:20px;
+		font-family:$font;
+	}
+}
 @mixin desktop() {
 	@media (min-width: #{$large-width}) {
 		@content;
@@ -22,6 +35,21 @@ $mobile-width:320px;
 	}
 }
 
+.col-4 {
+	@include desktop{
+		width:400px;
+		float:left;
+	}
+}
+.col-8 {
+	@include desktop{
+		width:560px;
+		float:left;
+		padding-left:30px;
+	}
+}
+
+
 #header {
 	@include desktop{
 		width:100px;
@@ -33,12 +61,17 @@ $mobile-width:320px;
 		margin-top:145px;
 	}
 }
+.nav.nav-tabs {
+	@include desktop{
+		padding-left: 300px;
+	}
+}
 
 .navbar-nav {
 	float:right;
 	a {
 		height:92px;
-		font-family:'Myriad Pro';
+		font-family:$font;
 		font-size:12px;
 		color:#d4d4d4;
 		border-left:1px solid #292c2d;
@@ -49,10 +82,18 @@ $mobile-width:320px;
 	}
 }
 
+.nav-tabs>li>a {
+	margin-right: 0 !important;
+	line-height: 1.42857143;
+	border-radius: 4px 4px 0 0;
+	border: 1px solid #ddd !important;
+}
+
 #navbar li a:hover {
 	background-color:#35373a;
 	color:#86acc4;
 }
+
 
 .contain {
 	width:960px;
@@ -76,12 +117,74 @@ $mobile-width:320px;
 	@include desktop{
 		margin-top:54px;
 		text-align:center;
-		font-family:'Myriad Pro';
-		span {
-			font-size:30px;
+		font-family:$font;
+		@include span-p;
+	}
+}
+
+#service_info {
+	text-align:left;
+	font-family:$font;
+	span {
+		font-size:17px;
+	}
+	p {
+		font-size:13px;
+	}
+}
+#webDesignTab,#photoTab,#graphicsTab {
+	height:384px;
+	@include desktop{
+		margin-top:32px;
+	}
+	p {
+		@include desktop{
+			margin-top:20px;
 		}
-		p {
-			font-size:20px;
+	}
+}
+
+.dash {
+	@include desktop{
+		clear: both;
+		border:2px dotted #b1b1b1;
+	}
+}
+
+#project {
+	@include desktop{ 
+		height:640px;
+		@include margin;
+		@include span-p;
+		text-align:center;
+		img {
+			width:312px;
+			height:250px;
+		}
+		.galery4 {
+			margin-top:14px;
+			width:320px;
+			float:left;
+		}
+	}
+}
+
+#blog {
+	@include desktop{ 
+		@include margin;
+		@include span-p;
+		text-align:center;
+	}
+}
+
+#customer {
+	@include desktop{ 
+		@include margin;
+		@include span-p;
+		text-align:center;
+		.customer-list {
+			width:160px;
+			float:left;
 		}
 	}
 }
