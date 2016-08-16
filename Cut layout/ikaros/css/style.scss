@@ -1,0 +1,87 @@
+$large-width:1224px;
+$desktop-width:1024px;
+$tablet-width:768px;
+$smallTablet-width:480px;
+$mobile-width:320px;
+
+@mixin desktop() {
+	@media (min-width: #{$large-width}) {
+		@content;
+	}
+}
+
+@mixin ipad() {
+	@media (min-width: #{$tablet-width}) and (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin smartphone() {
+	@media (min-width: #{$mobile-width}) and (min-width: #{$smallTablet-width}) {
+		@content;
+	}
+}
+
+#header {
+	@include desktop{
+		width:100px;
+	}
+}
+
+#body {
+	@include desktop{
+		margin-top:145px;
+	}
+}
+
+.navbar-nav {
+	float:right;
+	a {
+		height:92px;
+		font-family:'Myriad Pro';
+		font-size:12px;
+		color:#d4d4d4;
+		border-left:1px solid #292c2d;
+		border-right:1px solid #292c2d;
+	}
+	li a {
+		padding-top:50px;
+	}
+}
+
+#navbar li a:hover {
+	background-color:#35373a;
+	color:#86acc4;
+}
+
+.contain {
+	width:960px;
+	margin:auto;
+}
+
+#logo {
+	@include desktop{
+		margin:15px 0;
+	}
+}
+
+.navbar {
+	@include desktop{
+		background:#3a3d40;
+		height:94px;
+	}
+}
+
+#service {
+	@include desktop{
+		margin-top:54px;
+		text-align:center;
+		font-family:'Myriad Pro';
+		span {
+			font-size:30px;
+		}
+		p {
+			font-size:20px;
+		}
+	}
+}

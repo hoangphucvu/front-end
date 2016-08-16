@@ -1,0 +1,21 @@
+@media (min-width: 1224px) { #header { width: 100px; } }
+
+@media (min-width: 1224px) { #body { margin-top: 145px; } }
+
+.navbar-nav { float: right; }
+.navbar-nav a { height: 92px; font-family: 'Myriad Pro'; font-size: 12px; color: #d4d4d4; border-left: 1px solid #292c2d; border-right: 1px solid #292c2d; }
+.navbar-nav li a { padding-top: 50px; }
+
+#navbar li a:hover { background-color: #35373a; color: #86acc4; }
+
+.contain { width: 960px; margin: auto; }
+
+@media (min-width: 1224px) { #logo { margin: 15px 0; } }
+
+@media (min-width: 1224px) { .navbar { background: #3a3d40; height: 94px; } }
+
+@media (min-width: 1224px) { #service { margin-top: 54px; text-align: center; font-family: 'Myriad Pro'; }
+  #service span { font-size: 30px; }
+  #service p { font-size: 20px; } }
+
+/*# sourceMappingURL=style.css.map */
