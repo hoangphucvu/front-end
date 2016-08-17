@@ -4,16 +4,42 @@ $tablet-width:768px;
 $smallTablet-width:480px;
 $mobile-width:320px;
 $font:'Myriad Pro';
+
 @mixin margin() {
 	margin:50px 0;
 }
-@mixin span-p() {
+
+@mixin span-p-desktop() {
 	span {
 		font-size:30px;
 		font-family:$font;
 	}
 	p {
 		font-size:20px;
+		font-family:$font;
+	}
+}
+
+@mixin span-p-ipad() {
+	padding:5%;
+	span {
+		font-size:20px;
+		font-family:$font;
+	}
+	p {
+		font-size:18px;
+		font-family:$font;
+	}
+}
+
+@mixin span-p-mobile() {
+	padding:4%;
+	span {
+		font-size:15px;
+		font-family:$font;
+	}
+	p {
+		font-size:13px;
 		font-family:$font;
 	}
 }
@@ -24,138 +50,198 @@ $font:'Myriad Pro';
 }
 
 @mixin ipad() {
-	@media (min-width: #{$tablet-width}) and (min-width: #{$desktop-width}) {
+	@media (min-width: #{$smallTablet-width}) and (max-width: #{$desktop-width}) {
 		@content;
 	}
 }
 
 @mixin smartphone() {
-	@media (min-width: #{$mobile-width}) and (min-width: #{$smallTablet-width}) {
+	@media (min-width: #{$mobile-width}) and (max-width: #{$smallTablet-width}) {
 		@content;
 	}
 }
 
+@mixin clear() {
+	clear: both;
+}
 .col-4 {
-	@include desktop{
+	@include desktop {
 		width:400px;
 		float:left;
 	}
 }
 .col-8 {
-	@include desktop{
+	@include desktop {
 		width:560px;
 		float:left;
 		padding-left:30px;
 	}
 }
 
-
 #header {
-	@include desktop{
+	@include desktop {
 		width:100px;
 	}
 }
 
-#body {
-	@include desktop{
+#body_content {
+	@include desktop {
 		margin-top:145px;
 	}
 }
+
+.navbar {
+	@include desktop {
+		background-color:#3a3d40;
+	}
+}
+
 .nav.nav-tabs {
-	@include desktop{
+	@include desktop {
 		padding-left: 300px;
 	}
 }
 
 .navbar-nav {
-	float:right;
-	a {
-		height:92px;
-		font-family:$font;
-		font-size:12px;
-		color:#d4d4d4;
-		border-left:1px solid #292c2d;
-		border-right:1px solid #292c2d;
-	}
-	li a {
-		padding-top:50px;
+	@include desktop {
+		float:right;
+		a {
+			height:92px;
+			font-family:$font;
+			font-size:12px;
+			color:#d4d4d4;
+			border-left:1px solid #292c2d;
+			border-right:1px solid #292c2d;
+		}
+		li a {
+			padding-top:50px;
+		}
 	}
 }
 
 .nav-tabs>li>a {
-	margin-right: 0 !important;
-	line-height: 1.42857143;
-	border-radius: 4px 4px 0 0;
-	border: 1px solid #ddd !important;
+	@include desktop {
+		margin-right: 0 !important;
+		line-height: 1.42857143;
+		border-radius: 4px 4px 0 0;
+		border: 1px solid #ddd !important;
+	}
 }
 
 #navbar li a:hover {
-	background-color:#35373a;
-	color:#86acc4;
+	@include desktop {
+		background-color:#35373a;
+		color:#86acc4;
+	}
 }
 
 
 .contain {
-	width:960px;
-	margin:auto;
+	@include desktop {
+		width:960px;
+		margin:auto;
+	}
 }
 
 #logo {
-	@include desktop{
+	@include desktop {
 		margin:15px 0;
 	}
 }
 
-.navbar {
-	@include desktop{
-		background:#3a3d40;
-		height:94px;
+
+#header_dash {
+	@include desktop {
+		height:6px;
+		background-color:#4a4d50;
 	}
 }
 
 #service {
-	@include desktop{
+	@include desktop {
 		margin-top:54px;
 		text-align:center;
 		font-family:$font;
-		@include span-p;
+		@include span-p-desktop;
+	}
+	@include ipad {
+		margin-top:54px;
+		text-align:center;
+		font-family:$font;
+		@include span-p-ipad;
+	}
+	@include smartphone { 
+		margin-top:54px;
+		text-align:center;
+		font-family:$font;
+		@include span-p-mobile;
 	}
 }
 
 #service_info {
-	text-align:left;
-	font-family:$font;
-	span {
-		font-size:17px;
+	@include desktop {
+		text-align:left;
+		font-family:$font;
+		span {
+			font-size:17px;
+		}
+		p {
+			font-size:13px;
+		}
 	}
-	p {
-		font-size:13px;
+	@include ipad {
+		img {
+			width:80%;
+			margin: 20px 10%;
+		}
+		text-align:center;
+		font-family:$font;
+		span {
+			font-size:15px;
+		}
+		p {
+			font-size:13px;
+		}
+	}
+	@include smartphone {
+		img {
+			width:80%;
+			margin: 20px 10%;
+		}
+		text-align:center;
+		font-family:$font;
+		span {
+			font-size:15px;
+		}
+		p {
+			font-size:13px;
+		}
 	}
 }
+
 #webDesignTab,#photoTab,#graphicsTab {
-	height:384px;
-	@include desktop{
+	@include desktop {
+		height:384px;
 		margin-top:32px;
-	}
-	p {
-		@include desktop{
+		p {
 			margin-top:20px;
+			margin-bottom: 20px;
 		}
 	}
 }
 
 .dash {
-	@include desktop{
-		clear: both;
+	@include desktop {
+		@include clear;
 		border:2px dotted #b1b1b1;
 	}
 }
 
 #project {
-	@include desktop{ 
+	@include desktop { 
 		height:640px;
 		@include margin;
-		@include span-p;
+		@include span-p-desktop;
 		text-align:center;
 		img {
 			width:312px;
@@ -167,24 +253,311 @@ $font:'Myriad Pro';
 			float:left;
 		}
 	}
+	@include ipad {
+		text-align:center;
+		img {
+			width:50%;
+			height:150px;
+			float:left;
+		}
+		@include span-p-mobile;
+		margin-bottom: 2%;
+	}
+	@include smartphone {
+		text-align:center;
+		img {
+			width:50%;
+			height:150px;
+			float:left;
+		}
+		@include span-p-mobile;
+		margin-bottom: 2%;
+	}
 }
 
 #blog {
-	@include desktop{ 
+	@include desktop { 
 		@include margin;
-		@include span-p;
+		@include span-p-desktop;
 		text-align:center;
+	}
+	@include ipad { 
+		@include clear;
+		@include span-p-ipad;
+		text-align:center;
+	}
+	@include smartphone {
+		@include clear;
+		@include span-p-mobile;
+		text-align:center;
+	}
+	.blog_content {
+		@include desktop { 
+			width:50%;
+			float:left;
+			text-align:left;
+			font-family:$font;
+			span {
+				font-size:17px;
+			}
+			p {
+				font-size:13px;
+			}
+			h6 {
+				font-size:11px;
+				color:#80a8be;
+			}
+			.blog_date {
+				height: 150px;
+				float: left;
+				margin-right: 15px;
+			}
+			.blog_content_info {
+				
+			}
+		}
 	}
 }
 
 #customer {
-	@include desktop{ 
+	@include desktop { 
 		@include margin;
-		@include span-p;
+		@include span-p-desktop;
 		text-align:center;
 		.customer-list {
 			width:160px;
 			float:left;
+			margin-bottom:50px;
 		}
+	}
+	
+	@include ipad {
+		@include clear;
+		@include span-p-ipad;
+		text-align:center;
+		.customer-list {
+			width:50%;
+			float:left;
+		}
+	}
+
+	@include smartphone {
+		@include clear;
+		@include span-p-mobile;
+		text-align:center;
+		.customer-list {
+			width:50%;
+			float:left;
+		}
+	}
+}
+
+footer {
+	@include desktop {
+		@include clear;
+		background-color:#2f3235;
+		height:520px;
+		font-family:$font;
+		color:#e3e3e3;
+		span {
+			font-size:14px;
+		}
+		p {
+			font-size:13px;
+			margin-top:30px;
+			h5 {
+				font-size:11px;
+			}
+		}
+		#footer_content{
+			background-color:#3a3d40;
+			height:450px;
+			padding-top:30px;
+			.dash {
+				width:210px;
+			}
+		}
+		.footer_data {
+			width: 240px;
+			float:left;
+			padding-right: 5%;
+		}
+		#post {
+			h5 {
+				color:#81878d;
+			}
+		}
+		#twitter {
+			h6 {
+				color:#86acc4;
+			}
+		}
+		#contact_name,#contact_email {
+			height:35px;
+			background: #282b2d;
+			color:white;
+			border:none;
+		}
+		#contact_info {
+			background: #282b2d;
+			color:white;
+			height:140px;
+			border:none;
+			resize:none;
+		}
+		#contact input,#contact textarea{
+			width:140px;
+		}
+
+		#footer_bottom {
+			padding-top:22px;
+			#copy-right {
+				float:left;
+			}
+			#social {
+				float:right;
+				img {
+					margin-right: 10px;
+				}
+			}
+		}	
+	}
+	@include ipad {
+		@include clear;
+		background-color:#2f3235;
+		height:800px;
+		font-family:$font;
+		color:#e3e3e3;
+		span {
+			font-size:14px;
+		}
+		p {
+			font-size:13px;
+			margin-top:30px;
+			h5 {
+				font-size:11px;
+			}
+		}
+		#footer_content{
+			background-color:#3a3d40;
+			height:760px;
+			padding-top:30px;
+			padding:4%;
+			.dash {
+				width:210px;
+			}
+		}
+		.footer_data {
+			width: 50%;
+			float:left;
+			padding-right: 5%;
+		}
+		#post {
+			h5 {
+				color:#81878d;
+			}
+		}
+		#twitter {
+			h6 {
+				color:#86acc4;
+			}
+		}
+		#contact_name,#contact_email {
+			height:35px;
+			background: #282b2d;
+			color:white;
+			border:none;
+		}
+		#contact_info {
+			background: #282b2d;
+			color:white;
+			height:140px;
+			border:none;
+			resize:none;
+		}
+		#contact input,#contact textarea{
+			width:140px;
+		}
+		#footer_bottom {
+			padding-top:10px;
+			#copy-right {
+				float:left;
+			}
+			#social {
+				float:right;
+				img {
+					margin-right: 10px;
+				}
+			}
+		}	
+	}
+	@include smartphone {
+		@include clear;
+		background-color:#2f3235;
+		height:800px;
+		font-family:$font;
+		color:#e3e3e3;
+		span {
+			font-size:14px;
+		}
+		p {
+			font-size:13px;
+			margin-top:30px;
+			h5 {
+				font-size:11px;
+			}
+		}
+		#footer_content{
+			background-color:#3a3d40;
+			height:760px;
+			padding-top:30px;
+			padding:4%;
+			.dash {
+				width:210px;
+			}
+		}
+		.footer_data {
+			width: 50%;
+			float:left;
+			padding-right: 5%;
+		}
+		#post {
+			h5 {
+				color:#81878d;
+			}
+		}
+		#twitter {
+			h6 {
+				color:#86acc4;
+			}
+		}
+		#contact_name,#contact_email {
+			height:35px;
+			background: #282b2d;
+			color:white;
+			border:none;
+		}
+		#contact_info {
+			background: #282b2d;
+			color:white;
+			height:140px;
+			border:none;
+			resize:none;
+		}
+		#contact input,#contact textarea{
+			width:140px;
+		}
+		#footer_bottom {
+			padding-top:10px;
+			#copy-right {
+				float:left;
+			}
+			#social {
+				float:right;
+				img {
+					margin-right: 10px;
+				}
+			}
+		}	
 	}
 }
