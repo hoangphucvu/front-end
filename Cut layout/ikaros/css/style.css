@@ -1,30 +1,30 @@
-@media (min-width: 1224px) { .col-4 { width: 400px; float: left; } }
+@media (min-width: 1024px) { .col-4 { width: 400px; float: left; } }
 
-@media (min-width: 1224px) { .col-8 { width: 560px; float: left; padding-left: 30px; } }
+@media (min-width: 1024px) { .col-8 { width: 560px; float: left; padding-left: 30px; } }
 
-@media (min-width: 1224px) { #header { width: 100px; } }
+@media (min-width: 1024px) { #header { width: 100px; } }
 
-@media (min-width: 1224px) { #body_content { margin-top: 145px; } }
+@media (min-width: 1024px) { #body_content { margin-top: 145px; } }
 
-@media (min-width: 1224px) { .navbar { background-color: #3a3d40; } }
+@media (min-width: 1024px) { .navbar { background-color: #3a3d40; } }
 
-@media (min-width: 1224px) { .nav.nav-tabs { padding-left: 300px; } }
+@media (min-width: 1024px) { .nav.nav-tabs { padding-left: 300px; } }
 
-@media (min-width: 1224px) { .navbar-nav { float: right; }
+@media (min-width: 1024px) { .navbar-nav { float: right; }
   .navbar-nav a { height: 92px; font-family: "Myriad Pro"; font-size: 12px; color: #d4d4d4; border-left: 1px solid #292c2d; border-right: 1px solid #292c2d; }
   .navbar-nav li a { padding-top: 50px; } }
 
-@media (min-width: 1224px) { .nav-tabs > li > a { margin-right: 0 !important; line-height: 1.42857143; border-radius: 4px 4px 0 0; border: 1px solid #ddd !important; } }
+@media (min-width: 1024px) { .nav-tabs > li > a { margin-right: 0 !important; line-height: 1.42857143; border-radius: 4px 4px 0 0; border: 1px solid #ddd !important; } }
 
-@media (min-width: 1224px) { #navbar li a:hover { background-color: #35373a; color: #86acc4; } }
+@media (min-width: 1024px) { #navbar li a:hover { background-color: #35373a; color: #86acc4; } }
 
-@media (min-width: 1224px) { .contain { width: 960px; margin: auto; } }
+@media (min-width: 1024px) { .contain { width: 960px; margin: auto; } }
 
-@media (min-width: 1224px) { #logo { margin: 15px 0; } }
+@media (min-width: 1024px) { #logo { margin: 15px 0; } }
 
-@media (min-width: 1224px) { #header_dash { height: 6px; background-color: #4a4d50; } }
+@media (min-width: 1024px) { #header_dash { height: 6px; background-color: #4a4d50; } }
 
-@media (min-width: 1224px) { #service { margin-top: 54px; text-align: center; font-family: "Myriad Pro"; }
+@media (min-width: 1024px) { #service { margin-top: 54px; text-align: center; font-family: "Myriad Pro"; }
   #service span { font-size: 30px; font-family: "Myriad Pro"; }
   #service p { font-size: 20px; font-family: "Myriad Pro"; } }
 @media (min-width: 480px) and (max-width: 1024px) { #service { margin-top: 54px; text-align: center; font-family: "Myriad Pro"; padding: 5%; }
@@ -34,7 +34,7 @@
   #service span { font-size: 15px; font-family: "Myriad Pro"; }
   #service p { font-size: 13px; font-family: "Myriad Pro"; } }
 
-@media (min-width: 1224px) { #service_info { text-align: left; font-family: "Myriad Pro"; }
+@media (min-width: 1024px) { #service_info { text-align: left; font-family: "Myriad Pro"; }
   #service_info span { font-size: 17px; }
   #service_info p { font-size: 13px; } }
 @media (min-width: 480px) and (max-width: 1024px) { #service_info { text-align: center; font-family: "Myriad Pro"; }
@@ -46,26 +46,28 @@
   #service_info span { font-size: 15px; }
   #service_info p { font-size: 13px; } }
 
-@media (min-width: 1224px) { #webDesignTab, #photoTab, #graphicsTab { height: 384px; margin-top: 32px; }
+@media (min-width: 1024px) { #webDesignTab, #photoTab, #graphicsTab { height: 384px; margin-top: 32px; }
   #webDesignTab p, #photoTab p, #graphicsTab p { margin-top: 20px; margin-bottom: 20px; } }
 
-@media (min-width: 1224px) { .dash { clear: both; border: 2px dotted #b1b1b1; } }
+@media (min-width: 1024px) { .dash { clear: both; border: 2px dotted #b1b1b1; } }
+@media (min-width: 480px) and (max-width: 1024px) { .dash { clear: both; border: 1px dotted #b1b1b1; margin: 0 5%; } }
+@media (min-width: 320px) and (max-width: 480px) { .dash { clear: both; border: 1px dotted #b1b1b1; margin: 0 5%; } }
 
-@media (min-width: 1224px) { #project { height: 640px; margin: 50px 0; text-align: center; }
+@media (min-width: 1024px) { #project { height: 640px; margin: 50px 0; text-align: center; }
   #project span { font-size: 30px; font-family: "Myriad Pro"; }
   #project p { font-size: 20px; font-family: "Myriad Pro"; }
   #project img { width: 312px; height: 250px; }
   #project .galery4 { margin-top: 14px; width: 320px; float: left; } }
-@media (min-width: 480px) and (max-width: 1024px) { #project { text-align: center; padding: 4%; margin-bottom: 2%; }
+@media (min-width: 480px) and (max-width: 1024px) { #project { text-align: center; padding: 4%; margin-bottom: 2%; height: 600px; }
   #project img { width: 50%; height: 150px; float: left; }
   #project span { font-size: 15px; font-family: "Myriad Pro"; }
   #project p { font-size: 13px; font-family: "Myriad Pro"; } }
-@media (min-width: 320px) and (max-width: 480px) { #project { text-align: center; padding: 4%; margin-bottom: 2%; }
-  #project img { width: 50%; height: 150px; float: left; }
+@media (min-width: 320px) and (max-width: 480px) { #project { padding: 4%; text-align: center; height: 600px; }
   #project span { font-size: 15px; font-family: "Myriad Pro"; }
-  #project p { font-size: 13px; font-family: "Myriad Pro"; } }
+  #project p { font-size: 13px; font-family: "Myriad Pro"; }
+  #project img { width: 50%; float: left; } }
 
-@media (min-width: 1224px) { #blog { margin: 50px 0; text-align: center; }
+@media (min-width: 1024px) { #blog { margin: 50px 0; text-align: center; }
   #blog span { font-size: 30px; font-family: "Myriad Pro"; }
   #blog p { font-size: 20px; font-family: "Myriad Pro"; } }
 @media (min-width: 480px) and (max-width: 1024px) { #blog { clear: both; padding: 5%; text-align: center; }
@@ -74,13 +76,13 @@
 @media (min-width: 320px) and (max-width: 480px) { #blog { clear: both; padding: 4%; text-align: center; }
   #blog span { font-size: 15px; font-family: "Myriad Pro"; }
   #blog p { font-size: 13px; font-family: "Myriad Pro"; } }
-@media (min-width: 1224px) { #blog .blog_content { width: 50%; float: left; text-align: left; font-family: "Myriad Pro"; }
+@media (min-width: 1024px) { #blog .blog_content { width: 50%; float: left; text-align: left; font-family: "Myriad Pro"; }
   #blog .blog_content span { font-size: 17px; }
   #blog .blog_content p { font-size: 13px; }
   #blog .blog_content h6 { font-size: 11px; color: #80a8be; }
   #blog .blog_content .blog_date { height: 150px; float: left; margin-right: 15px; } }
 
-@media (min-width: 1224px) { #customer { margin: 50px 0; text-align: center; }
+@media (min-width: 1024px) { #customer { margin: 50px 0; text-align: center; }
   #customer span { font-size: 30px; font-family: "Myriad Pro"; }
   #customer p { font-size: 20px; font-family: "Myriad Pro"; }
   #customer .customer-list { width: 160px; float: left; margin-bottom: 50px; } }
@@ -93,7 +95,7 @@
   #customer p { font-size: 13px; font-family: "Myriad Pro"; }
   #customer .customer-list { width: 50%; float: left; } }
 
-@media (min-width: 1224px) { footer { clear: both; background-color: #2f3235; height: 520px; font-family: "Myriad Pro"; color: #e3e3e3; }
+@media (min-width: 1024px) { footer { clear: both; background-color: #2f3235; height: 520px; font-family: "Myriad Pro"; color: #e3e3e3; }
   footer span { font-size: 14px; }
   footer p { font-size: 13px; margin-top: 30px; }
   footer p h5 { font-size: 11px; }
@@ -109,17 +111,18 @@
   footer #footer_bottom #copy-right { float: left; }
   footer #footer_bottom #social { float: right; }
   footer #footer_bottom #social img { margin-right: 10px; } }
-@media (min-width: 480px) and (max-width: 1024px) { footer { clear: both; background-color: #2f3235; height: 800px; font-family: "Myriad Pro"; color: #e3e3e3; }
+@media (min-width: 480px) and (max-width: 1024px) { footer { clear: both; background-color: #2f3235; height: 850px; font-family: "Myriad Pro"; color: #e3e3e3; }
   footer span { font-size: 14px; }
-  footer p { font-size: 13px; margin-top: 30px; }
+  footer p { font-size: 13px; margin-top: 30px; width: 230px; }
   footer p h5 { font-size: 11px; }
-  footer #footer_content { background-color: #3a3d40; height: 760px; padding-top: 30px; padding: 4%; }
+  footer #footer_content { background-color: #3a3d40; height: 800px; padding-top: 30px; padding: 4%; }
   footer #footer_content .dash { width: 210px; }
-  footer .footer_data { width: 50%; float: left; padding-right: 5%; }
+  footer .footer_data { width: 50%; float: left; padding-right: 50px; }
   footer #post h5 { color: #81878d; }
   footer #twitter h6 { color: #86acc4; }
   footer #contact_name, footer #contact_email { height: 35px; background: #282b2d; color: white; border: none; }
   footer #contact_info { background: #282b2d; color: white; height: 140px; border: none; resize: none; }
+  footer #contact { height: 280px; }
   footer #contact input, footer #contact textarea { width: 140px; }
   footer #footer_bottom { padding-top: 10px; }
   footer #footer_bottom #copy-right { float: left; }
@@ -131,15 +134,15 @@
   footer p h5 { font-size: 11px; }
   footer #footer_content { background-color: #3a3d40; height: 760px; padding-top: 30px; padding: 4%; }
   footer #footer_content .dash { width: 210px; }
-  footer .footer_data { width: 50%; float: left; padding-right: 5%; }
+  footer .footer_data { width: 50%; float: left; padding-right: 15px; }
   footer #post h5 { color: #81878d; }
   footer #twitter h6 { color: #86acc4; }
   footer #contact_name, footer #contact_email { height: 35px; background: #282b2d; color: white; border: none; }
   footer #contact_info { background: #282b2d; color: white; height: 140px; border: none; resize: none; }
   footer #contact input, footer #contact textarea { width: 140px; }
   footer #footer_bottom { padding-top: 10px; }
-  footer #footer_bottom #copy-right { float: left; }
+  footer #footer_bottom #copy-right { float: left; font-size: 10px; margin: 10px; }
   footer #footer_bottom #social { float: right; }
-  footer #footer_bottom #social img { margin-right: 10px; } }
+  footer #footer_bottom #social img { margin-right: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

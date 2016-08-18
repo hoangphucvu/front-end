@@ -4,7 +4,6 @@ $tablet-width:768px;
 $smallTablet-width:480px;
 $mobile-width:320px;
 $font:'Myriad Pro';
-
 @mixin margin() {
 	margin:50px 0;
 }
@@ -44,7 +43,7 @@ $font:'Myriad Pro';
 	}
 }
 @mixin desktop() {
-	@media (min-width: #{$large-width}) {
+	@media (min-width: #{$desktop-width}) {
 		@content;
 	}
 }
@@ -235,6 +234,16 @@ $font:'Myriad Pro';
 		@include clear;
 		border:2px dotted #b1b1b1;
 	}
+	@include ipad {
+		@include clear;
+		border:1px dotted #b1b1b1;
+		margin: 0 5%;
+	}
+	@include smartphone {
+		@include clear;
+		border:1px dotted #b1b1b1;
+		margin: 0 5%;
+	}
 }
 
 #project {
@@ -262,16 +271,17 @@ $font:'Myriad Pro';
 		}
 		@include span-p-mobile;
 		margin-bottom: 2%;
+		height:600px;
 	}
+
 	@include smartphone {
+		@include span-p-mobile;
 		text-align:center;
+		height:600px;
 		img {
 			width:50%;
-			height:150px;
 			float:left;
 		}
-		@include span-p-mobile;
-		margin-bottom: 2%;
 	}
 }
 
@@ -425,7 +435,7 @@ footer {
 	@include ipad {
 		@include clear;
 		background-color:#2f3235;
-		height:800px;
+		height:850px;
 		font-family:$font;
 		color:#e3e3e3;
 		span {
@@ -434,13 +444,14 @@ footer {
 		p {
 			font-size:13px;
 			margin-top:30px;
+			width:230px;
 			h5 {
 				font-size:11px;
 			}
 		}
 		#footer_content{
 			background-color:#3a3d40;
-			height:760px;
+			height:800px;
 			padding-top:30px;
 			padding:4%;
 			.dash {
@@ -450,7 +461,8 @@ footer {
 		.footer_data {
 			width: 50%;
 			float:left;
-			padding-right: 5%;
+			padding-right:50px;
+
 		}
 		#post {
 			h5 {
@@ -474,6 +486,9 @@ footer {
 			height:140px;
 			border:none;
 			resize:none;
+		}
+		#contact {
+			height:280px;
 		}
 		#contact input,#contact textarea{
 			width:140px;
@@ -519,7 +534,7 @@ footer {
 		.footer_data {
 			width: 50%;
 			float:left;
-			padding-right: 5%;
+			padding-right:15px;
 		}
 		#post {
 			h5 {
@@ -551,11 +566,13 @@ footer {
 			padding-top:10px;
 			#copy-right {
 				float:left;
+				font-size: 10px;
+				margin:10px;
 			}
 			#social {
 				float:right;
 				img {
-					margin-right: 10px;
+					margin-right: 5px;
 				}
 			}
 		}	
