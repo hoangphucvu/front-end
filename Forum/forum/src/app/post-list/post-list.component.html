@@ -1,20 +1,20 @@
 <ul class="list-group" id="post-list">
-  <li class="list-group-item" *ngFor="let post of postList; let author of authorList" [class.bold]="post.id % 2 == 0">
+  <li class="list-group-item" *ngFor="let item of data" [class.bold]="item.id % 2 == 0">
     <div class="row">
       <div class="col-md-4">
-        <img src="{{post.image_url}}" alt="" />
+        <img src="{{item.image_url}}" alt="" />
       </div>
       <div class="col-md-4">
-        <h3>{{post.title}}</h3>
-        <p>{{post.body}}</p>
-        <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{post.created_at | date:'medium'}}</span>
+        <h3>{{item.title}}</h3>
+        <p>{{item.body}}</p>
+        <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{item.created_at | date:'medium'}}</span>
       </div>
-      <div class="col-md-4">
-          <img src="{{author.avatar_url}}" alt="" />
-          <h3>{{author.name}}</h3>
-          <p>{{author.role}}</p>
-          <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{author.place}}</span>
-        </div>
+      <div class="col-md-4" *ngFor="let author of item">
+        <img src="{{author.avatar_url}}" alt="" />
+        <h3>{{author.name}}</h3>
+        <p>{{author.role}}</p>
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{author.place}}</span>
+      </div>
     </div>
   </li>
 </ul>

@@ -10,8 +10,8 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  authorList: any;
-  postList: any;
+  data = [];
+  postList =  [];
   constructor(private http: Http) {
 
   }
@@ -21,8 +21,9 @@ export class PostListComponent implements OnInit {
     const postApi =    this.http.get('/assets/data/posts.json').map(res => res.json());
 
     Observable.forkJoin([authorsApi, postApi]).subscribe(results => {
-      this.authorList = results[0];
-      this.postList = results[1];
+      this.data = results[1];
+      this.data.push(results[0]);
+      console.log(this.data);
     });
   }
 
